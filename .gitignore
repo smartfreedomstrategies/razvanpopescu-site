@@ -12,3 +12,10 @@ node_modules/
 .gh-token
 .gh-token.*
 *.token
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example
