@@ -1,0 +1,14 @@
+# OS / editor junk
+.DS_Store
+Thumbs.db
+*.swp
+.vscode/
+.idea/
+
+# nimic de build — site static
+node_modules/
+
+# secrete — NU urca tokenul niciodată
+.gh-token
+.gh-token.*
+*.token
