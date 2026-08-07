@@ -964,7 +964,71 @@
       .proof-tags { gap: 8px; }
       .proof-tag { font-size: 12px; padding: 6px 10px; }
     }
+    /* ── Consimțământ cookie-uri ── */
+    .consent {
+      position: fixed;
+      left: 16px; right: 16px; bottom: 16px;
+      z-index: 100;
+      display: none;
+      gap: 16px;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 16px 20px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+    }
+    .consent.show { display: flex; }
+    .consent p {
+      margin: 0;
+      flex: 1 1 260px;
+      font-size: 14px;
+      line-height: 1.45;
+      color: var(--ink-soft);
+    }
+    .consent-actions { display: flex; gap: 8px; flex: 0 0 auto; }
+    .consent button {
+      font-family: var(--font-sans);
+      font-size: 14px;
+      font-weight: 600;
+      padding: 9px 18px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-pill);
+      background: var(--white);
+      color: var(--ink);
+      cursor: pointer;
+    }
+    .consent button.accept {
+      background: var(--ink);
+      border-color: var(--ink);
+      color: var(--white);
+    }
   </style>
+
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DJESLQ71FM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    // Denied until the visitor accepts; GA receives cookieless pings meanwhile.
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: 'denied'
+    });
+    try {
+      if (localStorage.getItem('consent-analytics') === 'granted') {
+        gtag('consent', 'update', { analytics_storage: 'granted' });
+      }
+    } catch (e) {}
+    gtag('js', new Date());
+    gtag('config', 'G-DJESLQ71FM');
+  </script>
 </head>
 <body>
 
@@ -984,7 +1048,7 @@
           <span class="logo-sub">Preiau. Rezolv. Tu respiri.</span>
         </div>
       </a>
-      <a class="header-cta" href="https://wa.me/40739348115?text=Bun%C4%83%20Razvan%2C%20vreau%20s%C4%83%20vorbim." target="_blank" rel="noopener">
+      <a class="header-cta" data-cta="header-whatsapp" href="https://wa.me/40739348115?text=Bun%C4%83%20Razvan%2C%20vreau%20s%C4%83%20vorbim." target="_blank" rel="noopener">
         Scrie-mi
       </a>
     </div>
@@ -1023,7 +1087,7 @@
       </div>
 
       <div class="hero-actions reveal reveal-delay-3">
-        <a class="btn-primary"
+        <a class="btn-primary" data-cta="hero-whatsapp"
            href="https://wa.me/40739348115?text=Bun%C4%83%20Razvan%2C%20vreau%20s%C4%83%20vorbim."
            target="_blank" rel="noopener">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -1031,7 +1095,7 @@
           </svg>
           Scrie-mi pe WhatsApp
         </a>
-        <a class="btn-ghost" href="tel:+40739348115">
+        <a class="btn-ghost" data-cta="hero-phone" href="tel:+40739348115">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.28h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.85a16 16 0 0 0 6 6l.86-.86a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.28 16z"/>
           </svg>
@@ -1312,7 +1376,7 @@
         20 de minute. Dacă pot să ajut, îți spun exact cum și cât costă. Dacă nu, îți spun și asta.
       </p>
       <div class="reveal">
-        <a class="btn-primary"
+        <a class="btn-primary" data-cta="final-whatsapp"
            href="https://wa.me/40739348115?text=Bun%C4%83%20Razvan%2C%20vreau%20s%C4%83%20vorbim."
            target="_blank" rel="noopener">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -1333,6 +1397,14 @@
       <p class="footer-tagline">Preiau. Rezolv. Tu respiri.</p>
     </div>
   </footer>
+
+  <div class="consent" id="consent" role="region" aria-label="Consimțământ cookie-uri">
+    <p>Folosesc cookie-uri doar ca să văd câți oameni ajung pe site. Nimic pentru reclame.</p>
+    <div class="consent-actions">
+      <button type="button" data-consent="denied">Refuz</button>
+      <button type="button" class="accept" data-consent="granted">Accept</button>
+    </div>
+  </div>
 
   <!-- ── SCRIPTS ── -->
   <script>
@@ -1371,6 +1443,28 @@
       });
     }, { threshold: 0.5 });
     counters.forEach(el => countObserver.observe(el));
+
+    // Cookie consent
+    const consent = document.getElementById('consent');
+    let choice = null;
+    try { choice = localStorage.getItem('consent-analytics'); } catch (e) {}
+    if (!choice) consent.classList.add('show');
+    consent.querySelectorAll('[data-consent]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const value = btn.dataset.consent;
+        try { localStorage.setItem('consent-analytics', value); } catch (e) {}
+        gtag('consent', 'update', { analytics_storage: value });
+        consent.classList.remove('show');
+      });
+    });
+
+    // Contact CTA tracking
+    document.querySelectorAll('[data-cta]').forEach(el => {
+      el.addEventListener('click', () => {
+        const [place, method] = el.dataset.cta.split('-');
+        gtag('event', 'contact_click', { method: method, cta_location: place });
+      });
+    });
   </script>
 </body>
 </html>
