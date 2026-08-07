@@ -55,7 +55,12 @@ async function brevo(env, path, payload) {
 
 async function subscribe(request, env) {
   if (request.method !== "POST") return json({ ok: false, error: "method" }, 405);
-  if (!env.BREVO_API_KEY) return json({ ok: false, error: "config" }, 500);
+  // Spune EXACT ce lipseste. Prima oara am pierdut timp pentru ca secretul
+  // exista, dar se numea "BREVO API" in loc de BREVO_API_KEY, iar raspunsul
+  // "config" arata identic cu "nu l-a adaugat nimeni inca".
+  if (!env.BREVO_API_KEY) {
+    return json({ ok: false, error: "config", lipseste: "BREVO_API_KEY" }, 500);
+  }
 
   // Acceptam doar cereri de pe propriul domeniu.
   const host = new URL(request.url).hostname;

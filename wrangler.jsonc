@@ -16,6 +16,16 @@
     "not_found_handling": "404-page"
   },
 
+  // ID-urile listelor din Brevo. NU sunt secrete, deci stau aici, in fisier.
+  // Motivul e important: `wrangler deploy` sterge variabilele simple adaugate
+  // din panoul Cloudflare si le inlocuieste cu ce scrie aici. Daca ar fi puse
+  // doar in panou, primul push urmator le-ar sterge in tacere si formularele
+  // ar trimite contacte fara lista. Secretele nu patesc asta: ele supravietuiesc.
+  "vars": {
+    "BREVO_LIST_TEST": "3",
+    "BREVO_LIST_CONVERSATIE": "4"
+  },
+
   "observability": {
     "enabled": true
   }
