@@ -1,16 +1,19 @@
 /**
- * POST /api/subscribe
+ * Workerul site-ului razvanpopescu.com
  *
- * Primeste trimiterile de la /test-executie-sau-pozitionare si /conversatie
- * si le duce in Brevo. Cheia API sta in variabilele Cloudflare, niciodata in
- * HTML si niciodata in repo.
+ * Fisierele statice (index.html, /conversatie, /brand-facts, robots.txt,
+ * sitemap.xml, _redirects) sunt servite direct de Cloudflare, inainte sa ajunga
+ * aici. Workerul se ocupa doar de rutele care nu sunt fisiere.
  *
- * Variabile (Workers & Pages > proiect > Settings > Variables and Secrets):
+ * Rute:
+ *   POST /api/subscribe  -> trimite in Brevo formularele de pe /test-... si /conversatie
+ *
+ * Variabile (Settings > Variables and secrets, DUPA primul deploy cu fisierul asta):
  *   BREVO_API_KEY          SECRET, cu Encrypt bifat
- *   BREVO_LIST_TEST        text, ID-ul numeric al listei pentru test
- *   BREVO_LIST_CONVERSATIE text, ID-ul numeric al listei pentru cereri de conversatie
- *   BREVO_NOTIFY_TO        text, optional. Unde primesti notificarea de lead
- *   BREVO_SENDER           text, optional. Expeditor verificat in Brevo
+ *   BREVO_LIST_TEST        ID-ul numeric al listei pentru test
+ *   BREVO_LIST_CONVERSATIE ID-ul numeric al listei pentru cereri de conversatie
+ *   BREVO_NOTIFY_TO        optional, unde primesti notificarea de lead
+ *   BREVO_SENDER           optional, expeditor verificat in Brevo
  *
  * Atributele trebuie sa existe DEJA in Brevo (Contacts > Settings > Contact attributes):
  *   SCOR_CLARITATE (number) · VERDICT (text) · SURSA (text)
@@ -45,12 +48,13 @@ async function brevo(env, path, payload) {
   try {
     body = await res.json();
   } catch (_) {}
-  // Contact existent: nu e o eroare pentru noi.
+  // Contact existent: pentru noi nu e eroare.
   if (body && body.code === "duplicate_parameter") return { ok: true, duplicate: true };
   return { ok: false, status: res.status, body };
 }
 
-export async function onRequestPost({ request, env }) {
+async function subscribe(request, env) {
+  if (request.method !== "POST") return json({ ok: false, error: "method" }, 405);
   if (!env.BREVO_API_KEY) return json({ ok: false, error: "config" }, 500);
 
   // Acceptam doar cereri de pe propriul domeniu.
@@ -87,12 +91,10 @@ export async function onRequestPost({ request, env }) {
     if (scor !== null) attributes.SCOR_CLARITATE = scor;
     if (verdict) attributes.VERDICT = verdict;
 
-    const listIds = env.BREVO_LIST_TEST ? [Number(env.BREVO_LIST_TEST)] : [];
-
     const r = await brevo(env, "/contacts", {
       email,
       attributes,
-      listIds,
+      listIds: env.BREVO_LIST_TEST ? [Number(env.BREVO_LIST_TEST)] : [],
       updateEnabled: true,
     });
     if (!r.ok) return json({ ok: false, error: "brevo" }, 502);
@@ -112,13 +114,12 @@ export async function onRequestPost({ request, env }) {
   };
 
   // Brevo are nevoie de un identificator. Daca omul a lasat telefon in loc de
-  // email, nu se creeaza contact, dar notificarea de mai jos tot pleaca.
+  // email nu se creeaza contact, dar notificarea de mai jos tot pleaca.
   if (isEmail(contact)) {
-    const listIds = env.BREVO_LIST_CONVERSATIE ? [Number(env.BREVO_LIST_CONVERSATIE)] : [];
     const r = await brevo(env, "/contacts", {
       email: contact,
       attributes,
-      listIds,
+      listIds: env.BREVO_LIST_CONVERSATIE ? [Number(env.BREVO_LIST_CONVERSATIE)] : [],
       updateEnabled: true,
     });
     if (!r.ok) return json({ ok: false, error: "brevo" }, 502);
@@ -130,13 +131,22 @@ export async function onRequestPost({ request, env }) {
       to: [{ email: env.BREVO_NOTIFY_TO }],
       subject: "Cerere de conversatie: " + nume,
       textContent:
-        "Nume: " + nume + "\n" + "Contact: " + contact + "\n\n" + "Ce e blocat:\n" + blocat + "\n",
+        "Nume: " + nume + "\nContact: " + contact + "\n\nCe e blocat:\n" + blocat + "\n",
     });
   }
 
   return json({ ok: true });
 }
 
-export async function onRequestGet() {
-  return json({ ok: false, error: "method" }, 405);
-}
+export default {
+  async fetch(request, env) {
+    const url = new URL(request.url);
+
+    if (url.pathname === "/api/subscribe") {
+      return subscribe(request, env);
+    }
+
+    // Orice altceva: fisierele site-ului, cu _redirects si _headers aplicate.
+    return env.ASSETS.fetch(request);
+  },
+};

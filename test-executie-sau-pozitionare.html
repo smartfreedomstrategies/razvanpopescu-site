@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Test gratuit: e o problemă de execuție sau de poziționare?</title>
+<meta name="description" content="Cinci întrebări, două minute. Afli dacă problema din marketingul tău e de execuție sau de claritate, și ce faci concret cu răspunsul." />
+<link rel="canonical" href="https://razvanpopescu.com/test-executie-sau-pozitionare" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://razvanpopescu.com/test-executie-sau-pozitionare" />
+<meta property="og:locale" content="ro_RO" />
+<meta property="og:title" content="Test gratuit: e o problemă de execuție sau de poziționare?" />
+<meta property="og:description" content="Cinci întrebări, două minute. Afli unde s-a rupt lanțul în marketingul tău." />
+<link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+<link rel="preconnect" href="https://cdn.fontshare.com" crossorigin />
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,600,700&display=swap" rel="stylesheet" />
+<style>
+:root{--ink:#0f0f0f;--ink-soft:#444;--ink-muted:#888;--surface:#fafafa;--surface-2:#fff3ee;--violet:#c73a0a;--violet-mid:#E8490E;--white:#fff;--border:rgba(0,0,0,.08);--font-sans:'Satoshi',system-ui,sans-serif;--radius-md:10px;--radius-lg:20px;--radius-pill:999px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-sans);background:var(--surface);color:var(--ink);-webkit-font-smoothing:antialiased;line-height:1.6}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+.narrow{max-width:720px;margin:0 auto;padding:0 24px}
+header{padding:26px 0;border-bottom:1px solid var(--border)}
+header .wrap{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.mark{font-size:17px;font-weight:600;letter-spacing:-.01em;color:var(--ink);text-decoration:none}
+.mark span{display:block;font-size:13px;font-weight:400;color:var(--ink-muted)}
+nav a{font-size:14px;font-weight:500;color:var(--ink-soft);text-decoration:none;border-bottom:1px solid transparent;transition:color .18s,border-color .18s}
+nav a:hover{color:var(--violet);border-color:var(--violet)}
+a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible{outline:2px solid var(--violet-mid);outline-offset:3px}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--violet);margin-bottom:18px}
+h1{font-size:clamp(32px,5vw,54px);font-weight:600;line-height:1.14;letter-spacing:-.025em;padding-bottom:.06em;max-width:17ch}
+h2{font-size:clamp(22px,3vw,32px);font-weight:600;line-height:1.2;letter-spacing:-.015em;padding-bottom:.05em;max-width:24ch}
+.hero{padding:76px 0 60px;background:
+ radial-gradient(880px 460px at 8% -12%, #fff3ee 0%, rgba(255,243,238,0) 62%),
+ radial-gradient(600px 320px at 98% 6%, rgba(232,73,14,.07) 0%, rgba(232,73,14,0) 60%),
+ linear-gradient(180deg,var(--white) 0%,var(--surface) 100%)}
+.lede{margin-top:22px;font-size:clamp(16px,2vw,19px);color:var(--ink-soft);max-width:56ch}
+.trust{margin-top:24px;font-size:14px;color:var(--ink-muted);padding-left:16px;border-left:2px solid var(--violet);border-radius:0}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--ink);color:var(--white);font-size:15px;font-weight:600;letter-spacing:.01em;padding:16px 32px;border-radius:var(--radius-pill);text-decoration:none;white-space:nowrap;border:0;cursor:pointer;font-family:inherit;box-shadow:0 4px 20px rgba(0,0,0,.15);transition:background .18s,transform .18s,box-shadow .18s}
+.btn:hover{background:var(--violet);transform:translateY(-1px);box-shadow:0 8px 28px rgba(232,73,14,.3)}
+.hero .btn{margin-top:30px}
+.herometa{margin-top:14px;font-size:14px;color:var(--ink-muted)}
+
+#test{padding:56px 0 64px;border-top:1px solid var(--border)}
+.card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);padding:38px 36px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+@media(max-width:640px){.card{padding:26px 20px}}
+.pbar{display:flex;align-items:center;gap:14px;margin-bottom:26px}
+.pbar .track{flex:1;height:5px;background:var(--surface-2);border-radius:999px;overflow:hidden}
+.pbar .fill{height:100%;width:20%;background:var(--violet);border-radius:999px;transition:width .28s ease}
+.pbar .lbl{font-size:12px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-muted);white-space:nowrap}
+.qh{font-size:clamp(20px,2.6vw,27px);font-weight:600;line-height:1.25;letter-spacing:-.015em;max-width:26ch}
+.qhint{margin-top:10px;font-size:15px;color:var(--ink-muted);max-width:52ch}
+.opts{margin-top:26px;display:grid;gap:10px}
+.opt{display:block;width:100%;text-align:left;font-family:inherit;font-size:16px;line-height:1.5;color:var(--ink);background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);padding:18px 20px;cursor:pointer;transition:border-color .16s,background .16s,transform .16s}
+.opt:hover{border-color:var(--violet);background:var(--white);transform:translateY(-1px)}
+.back{margin-top:22px;font-size:14px;color:var(--ink-muted);background:none;border:0;cursor:pointer;font-family:inherit;padding:0}
+.back:hover{color:var(--violet)}
+.step{display:none}
+.step.on{display:block}
+label{display:block;font-size:14px;font-weight:500;margin:22px 0 8px}
+input{width:100%;font-family:inherit;font-size:16px;color:var(--ink);background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);padding:14px 16px;transition:border-color .18s,background .18s}
+input:focus{background:var(--white);border-color:var(--violet)}
+#emailStep .btn{margin-top:22px;width:100%;min-height:52px}
+.formnote{margin-top:14px;font-size:14px;color:var(--ink-muted)}
+.score{display:inline-flex;align-items:baseline;gap:8px;background:var(--surface-2);border-radius:var(--radius-pill);padding:8px 18px;font-size:14px;font-weight:500;color:var(--violet);margin-bottom:20px}
+.verdict h3{font-size:clamp(21px,2.8vw,28px);font-weight:600;letter-spacing:-.015em;line-height:1.22;padding-bottom:.05em}
+.verdict p{margin-top:14px;font-size:16px;color:var(--ink-soft);max-width:58ch}
+.verdict .btn{margin-top:26px}
+section{padding:60px 0;border-top:1px solid var(--border)}
+.tinted{background:var(--surface-2);border-top:0}
+.sub{margin-top:12px;font-size:16px;color:var(--ink-soft);max-width:56ch}
+.bio p{font-size:16px;color:var(--ink-soft);max-width:62ch;margin-top:16px}
+.noscript-q{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-md);padding:20px 22px;margin-top:12px}
+.noscript-q h3{font-size:16px;font-weight:600}
+.noscript-q ul{margin:10px 0 0 18px;font-size:15px;color:var(--ink-soft)}
+details{border-bottom:1px solid var(--border)}
+summary{cursor:pointer;list-style:none;padding:20px 0;font-size:16px;font-weight:500;display:flex;justify-content:space-between;gap:16px;align-items:center}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:22px;color:var(--violet);line-height:1;transition:transform .2s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{padding:0 0 22px;color:var(--ink-soft);font-size:15px;max-width:62ch}
+.faqwrap{margin-top:26px;border-top:1px solid var(--border)}
+footer{border-top:1px solid var(--border);padding:34px 0 56px;font-size:14px;color:var(--ink-muted)}
+footer a{color:var(--ink-soft);text-decoration:none;border-bottom:1px solid var(--border)}
+footer a:hover{color:var(--violet);border-color:var(--violet)}
+.updated{margin-top:12px;font-size:13px}
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+ .logo{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}
+.logo svg{height:32px;color:var(--ink)}
+.logo-text{display:flex;flex-direction:column;gap:1px}
+.logo-name{font-size:16px;font-weight:600;letter-spacing:.02em;color:var(--ink);line-height:1.2}
+.logo-sub{font-size:11px;color:var(--ink-muted);letter-spacing:.04em}
+@media(max-width:640px){.logo{gap:8px}.logo svg{height:26px}.logo-name{font-size:14px}.logo-sub{font-size:12px}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="https://razvanpopescu.com" aria-label="Razvan Popescu">
+        <svg aria-hidden="true" height="32" viewBox="0 0 150.36836 99.531502" xmlns="http://www.w3.org/2000/svg" style="display:block;flex-shrink:0;">
+          <g transform="translate(-28.175054,-19.310341)">
+            <path d="M 121.78687,19.571249 V 118.6557 H 98.630551 V 19.571249 Z m 27.25147,-0.260604 c 3.96486,-0.01864 7.8925,0.819036 11.5037,2.438485 3.53673,1.582225 6.73841,3.853184 9.40027,6.682575 2.69908,2.903846 4.83974,6.291662 6.29166,9.995928 1.56361,3.927639 2.34542,8.134491 2.30819,12.359959 0,4.597757 -0.76319,8.823224 -2.30819,12.695024 -1.54499,3.871793 -3.6298,7.203769 -6.29166,9.977316 -2.66186,2.79216 -5.88215,5.007279 -9.45612,6.477811 -3.74149,1.563609 -7.78081,2.345414 -11.83875,2.30819 h -8.06004 c 1.9359,-1.154095 3.7415,-2.754936 5.41679,-4.821131 1.74975,-2.215112 3.22029,-4.634991 4.37439,-7.203778 1.28439,-2.903847 2.25233,-5.937988 2.848,-9.046598 0.67012,-3.425047 1.00518,-6.905941 0.98656,-10.386834 0.0186,-3.536734 -0.31644,-7.054852 -0.98656,-10.51713 -0.59567,-3.089995 -1.545,-6.124143 -2.848,-8.990758 -1.1541,-2.550171 -2.62464,-4.951432 -4.37439,-7.147929 -1.67529,-2.066195 -3.48089,-3.685651 -5.41679,-4.82113 z" fill="currentColor"/>
+            <path d="m 41.502964,89.096027 c 0.670118,-2.512941 1.675295,-4.914202 2.978303,-7.147929 1.209936,-2.066195 2.829389,-3.871793 4.765286,-5.286485 1.86144,-1.358852 4.113782,-2.066202 6.421967,-2.047586 h 4.244083 c -3.350591,0 -6.310281,-0.874876 -8.860453,-2.643245 -2.587401,-1.786982 -4.765286,-4.076557 -6.421968,-6.738415 -1.731139,-2.754928 -3.034147,-5.770461 -3.834566,-8.934911 -0.800419,-2.996917 -1.22855,-6.086905 -1.265779,-9.195515 0,-2.903847 0.521203,-5.975219 1.582224,-9.195509 1.079635,-3.257521 2.79216,-6.273053 5.025888,-8.860456 2.289571,-2.680473 5.230646,-4.895585 8.80461,-6.608112 3.573964,-1.71252 7.818047,-2.587403 12.769477,-2.568787 h 12.043516 c -4.504685,2.02897 -8.134492,5.491248 -10.908038,10.386834 -2.773545,4.895586 -4.169625,10.517136 -4.169625,16.864645 -0.01862,3.071379 0.372288,6.142752 1.135478,9.12106 0.688733,2.773544 1.731139,5.435402 3.108605,7.948343 1.265779,2.30819 2.885231,4.430231 4.765286,6.291669 1.768368,1.749751 3.815951,3.164452 6.086908,4.16963 h -0.1303 c -3.536737,1.675296 -6.440583,4.50468 -8.730154,8.46955 -2.289571,3.964864 -3.443663,8.46955 -3.443663,13.495439 0,2.38264 -0.446746,4.895583 -1.321623,7.538833 -0.874876,2.64325 -2.382642,5.0445 -4.504684,7.20377 -2.103427,2.15928 -4.932816,3.94626 -8.469551,5.36095 -3.536735,1.41469 -7.892505,2.12204 -13.085922,2.12204 H 28.175054 c 3.704265,-1.67529 6.682569,-4.5233 8.934912,-8.5254 2.252342,-4.00209 3.369206,-8.58123 3.369206,-13.681583 -0.01861,-2.606014 0.353673,-5.118954 1.023792,-7.53883 z" fill="currentColor"/>
+            <path d="m 175.71277,109.03205 c 0,1.28439 -0.2606,2.55018 -0.76319,3.72288 -0.48397,1.13548 -1.17271,2.17789 -2.02897,3.05276 -0.83765,0.87488 -1.86144,1.58223 -2.9783,2.0662 -1.15409,0.52121 -2.41987,0.78181 -3.68566,0.76319 -2.53155,0 -4.97004,-1.02379 -6.7384,-2.82939 -0.85627,-0.89349 -1.545,-1.91728 -2.02897,-3.05276 -0.5026,-1.1727 -0.76319,-2.43849 -0.76319,-3.72288 0,-1.26578 0.26059,-2.49433 0.76319,-3.64842 0.94933,-2.27095 2.75492,-4.07655 5.02588,-5.0445 1.17271,-0.502593 2.4571,-0.763193 3.74149,-0.763193 1.26579,-0.0186 2.53157,0.24198 3.68566,0.763193 1.09825,0.48397 2.10343,1.1727 2.9783,2.02897 0.85626,0.87488 1.545,1.89866 2.02897,3.01553 0.50259,1.15409 0.76319,2.40126 0.76319,3.64842 z" fill="currentColor"/>
+          </g>
+        </svg>
+        <span class="logo-text">
+          <span class="logo-name">Razvan Popescu</span>
+          <span class="logo-sub">Preiau. Rezolv. Tu respiri.</span>
+        </span>
+      </a>
+    <nav><a href="https://razvanpopescu.com">Pagina principală</a></nav>
+  </div>
+</header>
+
+<main>
+
+<div class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Test gratuit · 2 minute</p>
+    <h1>Nu mai da banii pe marketing până nu răspunzi la 5 întrebări</h1>
+    <p class="lede">Cele mai multe probleme de marketing nu sunt de execuție. Sunt de ordine: se plătește promovarea înainte să fie clar ce vinzi, cui și de ce ție. Cinci întrebări îți arată unde s-a rupt lanțul.</p>
+    <button class="btn" id="start" type="button">Începe testul</button>
+    <p class="herometa">5 întrebări. Emailul îl ceri abia la final, ca să-ți trimit rezultatul.</p>
+    <p class="trust">Marketing, poziționare și vânzări din 2004. 11 ani în marketing farmaceutic, în Australia.</p>
+  </div>
+</div>
+
+<section id="test">
+  <div class="narrow">
+    <div class="card">
+
+      <div class="pbar" id="pbar" hidden>
+        <span class="lbl" id="plabel">Întrebarea 1 din 5</span>
+        <span class="track"><span class="fill" id="pfill"></span></span>
+      </div>
+
+      <div class="step on" id="q1">
+        <h3 class="qh">Ultimii 10 oameni care au întrebat de preț și n-au cumpărat. Ce motive ți-au dat?</h3>
+        <p class="qhint">Motivele lor, așa cum ți le-au spus. Nu cum le-ai interpretat tu.</p>
+        <div class="opts">
+          <button class="opt" type="button" data-v="0">Motive diferite de fiecare dată</button>
+          <button class="opt" type="button" data-v="1">Cam aceleași: „mă mai gândesc”, „e cam scump”, „nu e momentul”</button>
+          <button class="opt" type="button" data-v="1">Nu știu, nu i-am întrebat</button>
+        </div>
+      </div>
+
+      <div class="step" id="q2">
+        <h3 class="qh">Dacă lipsești o săptămână din firmă, ce se întâmplă?</h3>
+        <p class="qhint">Nu ce ar trebui să se întâmple. Ce s-a întâmplat ultima dată.</p>
+        <div class="opts">
+          <button class="opt" type="button" data-v="0">Merge mai departe, fără mine</button>
+          <button class="opt" type="button" data-v="1">Scad cifrele</button>
+          <button class="opt" type="button" data-v="1">Se blochează lucruri și apare haos</button>
+        </div>
+        <button class="back" type="button">Înapoi</button>
+      </div>
+
+      <div class="step" id="q3">
+        <h3 class="qh">Scrie în gând ce crezi că e blocat. De unde știi?</h3>
+        <p class="qhint">Diferența dintre un diagnostic și o ipoteză e un număr.</p>
+        <div class="opts">
+          <button class="opt" type="button" data-v="0">Am un număr în spate</button>
+          <button class="opt" type="button" data-v="1">E mai mult o senzație</button>
+          <button class="opt" type="button" data-v="1">Aș spune trei lucruri deodată</button>
+        </div>
+        <button class="back" type="button">Înapoi</button>
+      </div>
+
+      <div class="step" id="q4">
+        <h3 class="qh">Ce poate dispărea complet de pe lista ta?</h3>
+        <p class="qhint">Nu ce se poate face mai bine. Ce poate să nu se mai facă deloc.</p>
+        <div class="opts">
+          <button class="opt" type="button" data-v="0">Găsesc 3 lucruri în 5 minute</button>
+          <button class="opt" type="button" data-v="1">Găsesc unul, cu greu</button>
+          <button class="opt" type="button" data-v="1">Nimic. Totul pare necesar</button>
+        </div>
+        <button class="back" type="button">Înapoi</button>
+      </div>
+
+      <div class="step" id="q5">
+        <h3 class="qh">Dacă pui un client vechi să spună cine ești, pentru cine și de ce tu, ce iese?</h3>
+        <p class="qhint">Un om din afară, nu cineva din firmă.</p>
+        <div class="opts">
+          <button class="opt" type="button" data-v="0">Ar repeta corect</button>
+          <button class="opt" type="button" data-v="1">Ar spune altceva decât spun eu</button>
+          <button class="opt" type="button" data-v="1">N-am încercat niciodată</button>
+        </div>
+        <button class="back" type="button">Înapoi</button>
+      </div>
+
+      <div class="step" id="emailStep">
+        <h3 class="qh">Ai terminat. Unde îți trimit rezultatul?</h3>
+        <p class="qhint">Primești verdictul plus ce faci concret cu el, în ordine. Un singur email.</p>
+        <form id="f" novalidate>
+          <label for="email">Adresa de email</label>
+          <input id="email" name="email" type="email" autocomplete="email" inputmode="email" required />
+          <button class="btn" type="submit">Vezi rezultatul</button>
+        </form>
+        <p class="formnote">Poți ieși din listă dintr-un clic, oricând. Fără curs și fără apel.</p>
+        <button class="back" type="button">Înapoi</button>
+      </div>
+
+      <div class="step verdict" id="result">
+        <p class="score" id="scoreline">Rezultatul tău</p>
+        <h3 id="vtitle">Rezultatul tău</h3>
+        <p id="vbody"></p>
+        <a class="btn" id="vcta" href="/conversatie">O conversație de 20 de minute</a>
+        <p class="formnote">Ți-am trimis și pe email verdictul, cu explicația pentru fiecare întrebare.</p>
+      </div>
+
+      <noscript>
+        <p class="qhint" style="margin-top:0">Testul se completează pe loc, cu JavaScript pornit. Întrebările sunt oricum mai jos, dacă preferi să le parcurgi singur.</p>
+        <div class="noscript-q"><h3>1. Ultimii 10 care au întrebat de preț și n-au cumpărat</h3><ul><li>Motive diferite de fiecare dată: execuție</li><li>Cam aceleași motive: claritate</li></ul></div>
+        <div class="noscript-q"><h3>2. Dacă lipsești o săptămână</h3><ul><li>Merge fără tine: execuție</li><li>Scad cifrele sau apare haos: claritate</li></ul></div>
+        <div class="noscript-q"><h3>3. De unde știi ce e blocat</h3><ul><li>Ai un număr: execuție</li><li>E o senzație: claritate</li></ul></div>
+        <div class="noscript-q"><h3>4. Ce poate dispărea de pe listă</h3><ul><li>Trei lucruri în cinci minute: execuție</li><li>Niciunul: claritate</li></ul></div>
+        <div class="noscript-q"><h3>5. Cine ești, pentru cine, de ce tu</h3><ul><li>Un client vechi ar repeta corect: execuție</li><li>Ar spune altceva: claritate</li></ul></div>
+      </noscript>
+
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="narrow">
+    <p class="eyebrow">Ce afli la final</p>
+    <h2>Un verdict în trei trepte și ce faci cu fiecare</h2>
+    <p class="sub">Sunt două probleme diferite și nu le rezolvi cu aceiași bani. Dacă e execuție, știi exact ce să cumperi și de la cine. Dacă e claritate, afli de ce banii dați până acum pe marketing n-au produs nimic și de ce nici următorii n-ar produce.</p>
+  </div>
+</section>
+
+<section class="tinted">
+  <div class="wrap bio">
+    <p class="eyebrow">Cine a scris testul</p>
+    <h2>Fac diagnosticul ăsta de 21 de ani, în discuții, nu pe hârtie</h2>
+    <p>Am pornit în 2004, în România. Primul client: Nurvil Tuning, dealerul oficial ABT Sportsline. În 2010 am ajuns în Sydney și am făcut 11 ani de marketing farmaceutic, unde un mesaj greșit are consecințe reale. Din 2022 lucrez din România, direct cu antreprenori și firme mici.</p>
+    <p>Testul e varianta scurtă a primelor 20 de minute dintr-o discuție cu mine.</p>
+    <p><a class="mark" style="font-size:14px;font-weight:500;border-bottom:1px solid var(--border)" href="/brand-facts">Toate datele verificabile</a></p>
+  </div>
+</section>
+
+<section>
+  <div class="narrow">
+    <p class="eyebrow">Întrebări firești</p>
+    <h2>Înainte să începi</h2>
+    <div class="faqwrap">
+      <details><summary>Cât durează?</summary><p>Două minute. Cinci întrebări, cu variante de răspuns. Nu ai ce pregăti și nu ai nevoie de cifre exacte, doar de ce știi deja despre firma ta.</p></details>
+      <details><summary>De ce ceri emailul dacă testul e gratuit?</summary><p>Ca să-ți trimit rezultatul scris, cu explicația pentru fiecare întrebare. Verdictul îl vezi oricum pe ecran, imediat. Dacă mai scriu ceva după aceea, ieși din listă dintr-un clic, fără să dai explicații.</p></details>
+      <details><summary>Am mai completat teste de genul ăsta și n-a ieșit nimic.</summary><p>Cele mai multe teste de marketing întreabă ce simți despre afacerea ta. Ăsta întreabă ce s-a întâmplat: câți oameni au refuzat, cu ce motive, ce se oprește dacă lipsești. Răspunsurile sunt verificabile, deci și verdictul e.</p></details>
+      <details><summary>Dacă îmi iese că am o problemă de execuție, ce fac?</summary><p>Testul îți spune și asta, plus ce să ceri de la cine angajezi. Nu toate răspunsurile duc la mine și e în regulă.</p></details>
+    </div>
+    <p class="formnote" style="margin-top:26px">Preferi să vorbim direct? <a class="mark" style="font-size:14px;font-weight:500;border-bottom:1px solid var(--border)" id="rung" href="/conversatie">O conversație de 20 de minute</a>, fără pitch și fără prezentare.</p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <svg aria-hidden="true" height="22" viewBox="0 0 150.36836 99.531502" xmlns="http://www.w3.org/2000/svg" style="display:inline-block;vertical-align:-5px;margin-right:8px;color:var(--ink-muted)"><g transform="translate(-28.175054,-19.310341)"><path d="M 121.78687,19.571249 V 118.6557 H 98.630551 V 19.571249 Z m 27.25147,-0.260604 c 3.96486,-0.01864 7.8925,0.819036 11.5037,2.438485 3.53673,1.582225 6.73841,3.853184 9.40027,6.682575 2.69908,2.903846 4.83974,6.291662 6.29166,9.995928 1.56361,3.927639 2.34542,8.134491 2.30819,12.359959 0,4.597757 -0.76319,8.823224 -2.30819,12.695024 -1.54499,3.871793 -3.6298,7.203769 -6.29166,9.977316 -2.66186,2.79216 -5.88215,5.007279 -9.45612,6.477811 -3.74149,1.563609 -7.78081,2.345414 -11.83875,2.30819 h -8.06004 c 1.9359,-1.154095 3.7415,-2.754936 5.41679,-4.821131 1.74975,-2.215112 3.22029,-4.634991 4.37439,-7.203778 1.28439,-2.903847 2.25233,-5.937988 2.848,-9.046598 0.67012,-3.425047 1.00518,-6.905941 0.98656,-10.386834 0.0186,-3.536734 -0.31644,-7.054852 -0.98656,-10.51713 -0.59567,-3.089995 -1.545,-6.124143 -2.848,-8.990758 -1.1541,-2.550171 -2.62464,-4.951432 -4.37439,-7.147929 -1.67529,-2.066195 -3.48089,-3.685651 -5.41679,-4.82113 z" fill="currentColor"/><path d="m 41.502964,89.096027 c 0.670118,-2.512941 1.675295,-4.914202 2.978303,-7.147929 1.209936,-2.066195 2.829389,-3.871793 4.765286,-5.286485 1.86144,-1.358852 4.113782,-2.066202 6.421967,-2.047586 h 4.244083 c -3.350591,0 -6.310281,-0.874876 -8.860453,-2.643245 -2.587401,-1.786982 -4.765286,-4.076557 -6.421968,-6.738415 -1.731139,-2.754928 -3.034147,-5.770461 -3.834566,-8.934911 -0.800419,-2.996917 -1.22855,-6.086905 -1.265779,-9.195515 0,-2.903847 0.521203,-5.975219 1.582224,-9.195509 1.079635,-3.257521 2.79216,-6.273053 5.025888,-8.860456 2.289571,-2.680473 5.230646,-4.895585 8.80461,-6.608112 3.573964,-1.71252 7.818047,-2.587403 12.769477,-2.568787 h 12.043516 c -4.504685,2.02897 -8.134492,5.491248 -10.908038,10.386834 -2.773545,4.895586 -4.169625,10.517136 -4.169625,16.864645 -0.01862,3.071379 0.372288,6.142752 1.135478,9.12106 0.688733,2.773544 1.731139,5.435402 3.108605,7.948343 1.265779,2.30819 2.885231,4.430231 4.765286,6.291669 1.768368,1.749751 3.815951,3.164452 6.086908,4.16963 h -0.1303 c -3.536737,1.675296 -6.440583,4.50468 -8.730154,8.46955 -2.289571,3.964864 -3.443663,8.46955 -3.443663,13.495439 0,2.38264 -0.446746,4.895583 -1.321623,7.538833 -0.874876,2.64325 -2.382642,5.0445 -4.504684,7.20377 -2.103427,2.15928 -4.932816,3.94626 -8.469551,5.36095 -3.536735,1.41469 -7.892505,2.12204 -13.085922,2.12204 H 28.175054 c 3.704265,-1.67529 6.682569,-4.5233 8.934912,-8.5254 2.252342,-4.00209 3.369206,-8.58123 3.369206,-13.681583 -0.01861,-2.606014 0.353673,-5.118954 1.023792,-7.53883 z" fill="currentColor"/><path d="m 175.71277,109.03205 c 0,1.28439 -0.2606,2.55018 -0.76319,3.72288 -0.48397,1.13548 -1.17271,2.17789 -2.02897,3.05276 -0.83765,0.87488 -1.86144,1.58223 -2.9783,2.0662 -1.15409,0.52121 -2.41987,0.78181 -3.68566,0.76319 -2.53155,0 -4.97004,-1.02379 -6.7384,-2.82939 -0.85627,-0.89349 -1.545,-1.91728 -2.02897,-3.05276 -0.5026,-1.1727 -0.76319,-2.43849 -0.76319,-3.72288 0,-1.26578 0.26059,-2.49433 0.76319,-3.64842 0.94933,-2.27095 2.75492,-4.07655 5.02588,-5.0445 1.17271,-0.502593 2.4571,-0.763193 3.74149,-0.763193 1.26579,-0.0186 2.53157,0.24198 3.68566,0.763193 1.09825,0.48397 2.10343,1.1727 2.9783,2.02897 0.85626,0.87488 1.545,1.89866 2.02897,3.01553 0.50259,1.15409 0.76319,2.40126 0.76319,3.64842 z" fill="currentColor"/></g></svg>Razvan Popescu · Marketing, poziționare și vânzări · <a href="https://razvanpopescu.com">razvanpopescu.com</a> · <a href="/brand-facts">Date verificabile</a> · <a href="https://wa.me/40739348115?text=Bun%C4%83%20Razvan%2C%20vreau%20s%C4%83%20vorbim." id="wa-footer">Scrie-mi pe WhatsApp</a>
+    <div class="updated">Ultima actualizare: august 2026</div>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {"@type":"WebPage","@id":"https://razvanpopescu.com/test-executie-sau-pozitionare#page","url":"https://razvanpopescu.com/test-executie-sau-pozitionare","name":"Test gratuit: e o problemă de execuție sau de poziționare?","inLanguage":"ro","description":"Cinci întrebări, două minute. Afli dacă problema din marketingul tău e de execuție sau de claritate.","dateModified":"2026-08-07"},
+    {"@type":"Person","@id":"https://razvanpopescu.com/#razvan-popescu","name":"Razvan Popescu","url":"https://razvanpopescu.com","jobTitle":"Consultant de marketing, poziționare și vânzări","telephone":"+40739348115","knowsLanguage":["ro","en"],"alumniOf":{"@type":"Organization","name":"Datapharm Australia"},"sameAs":["https://rekomai.com","https://thedaclife.com","https://creierulafacerii.ro","https://thefoundersbrain.com","https://www.linkedin.com/in/tribearchitect"]},
+    {"@type":"FAQPage","@id":"https://razvanpopescu.com/test-executie-sau-pozitionare#faq","mainEntity":[
+      {"@type":"Question","name":"Cât durează?","acceptedAnswer":{"@type":"Answer","text":"Două minute. Cinci întrebări, cu variante de răspuns. Nu ai ce pregăti și nu ai nevoie de cifre exacte, doar de ce știi deja despre firma ta."}},
+      {"@type":"Question","name":"De ce ceri emailul dacă testul e gratuit?","acceptedAnswer":{"@type":"Answer","text":"Ca să-ți trimit rezultatul scris, cu explicația pentru fiecare întrebare. Verdictul îl vezi oricum pe ecran, imediat. Dacă mai scriu ceva după aceea, ieși din listă dintr-un clic, fără să dai explicații."}},
+      {"@type":"Question","name":"Am mai completat teste de genul ăsta și n-a ieșit nimic.","acceptedAnswer":{"@type":"Answer","text":"Cele mai multe teste de marketing întreabă ce simți despre afacerea ta. Ăsta întreabă ce s-a întâmplat: câți oameni au refuzat, cu ce motive, ce se oprește dacă lipsești. Răspunsurile sunt verificabile, deci și verdictul e."}},
+      {"@type":"Question","name":"Dacă îmi iese că am o problemă de execuție, ce fac?","acceptedAnswer":{"@type":"Answer","text":"Testul îți spune și asta, plus ce să ceri de la cine angajezi. Nu toate răspunsurile duc la mine și e în regulă."}}
+    ]}
+  ]
+}
+</script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DJESLQ71FM"></script>
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}
+gtag('js',new Date());
+var AI_HOSTS={'chatgpt.com':'chatgpt','chat.openai.com':'chatgpt','perplexity.ai':'perplexity','gemini.google.com':'gemini','copilot.microsoft.com':'copilot','claude.ai':'claude','you.com':'you'};
+var aiRef=null;
+try{if(document.referrer){var h=new URL(document.referrer).hostname.replace(/^www\./,'');for(var k in AI_HOSTS){if(h===k||h.endsWith('.'+k)){aiRef=AI_HOSTS[k];break}}}}catch(e){}
+gtag('config','G-DJESLQ71FM',aiRef?{ai_referral:aiRef}:{});
+function ev(n,p){p=p||{};if(aiRef)p.ai_referral=aiRef;gtag('event',n,p)}
+
+var STEPS=['q1','q2','q3','q4','q5','emailStep'],i=0,answers=[];
+var pbar=document.getElementById('pbar'),pfill=document.getElementById('pfill'),plabel=document.getElementById('plabel');
+function show(n){
+  STEPS.concat(['result']).forEach(function(id){var e=document.getElementById(id);if(e)e.classList.remove('on')});
+  document.getElementById(STEPS[n]).classList.add('on');
+  if(n<5){pbar.hidden=false;plabel.textContent='Întrebarea '+(n+1)+' din 5';pfill.style.width=((n+1)*20)+'%'}
+  else{pbar.hidden=false;plabel.textContent='Gata. Ultimul pas';pfill.style.width='100%'}
+  document.getElementById('test').scrollIntoView({block:'start'});
+}
+document.getElementById('start').addEventListener('click',function(){
+  ev('aeo_cta_click',{method:'quiz',cta_location:'hero_start'});
+  i=0;answers=[];show(0);
+});
+STEPS.slice(0,5).forEach(function(id,idx){
+  document.getElementById(id).querySelectorAll('.opt').forEach(function(b){
+    b.addEventListener('click',function(){answers[idx]=parseInt(b.getAttribute('data-v'),10);i=idx+1;show(i)})
+  })
+});
+document.querySelectorAll('.back').forEach(function(b){
+  b.addEventListener('click',function(){if(i>0){i--;show(i)}})
+});
+var V=[
+ {t:'Ai o problemă de execuție',
+  b:'Poziționarea ta ține. Ce nu ține e felul în care se face treaba. Cumpără execuție, dar cere de la început o măsurătoare pe care o poți reface singur, fără furnizor de față, și un punct de oprire clar la 30 de zile. Rapoartele lunare nu sunt dovadă.'},
+ {t:'Ești în zonă gri',
+  b:'Unele lucruri sunt clare, altele nu. Ia întâi întrebarea la care ai răspuns cel mai slab, rezolv-o, apoi reia testul peste două săptămâni. Până atunci, orice buget nou de promovare e un pariu.'},
+ {t:'Nu e execuție. E claritate',
+  b:'Dacă pornești acum un buget de promovare, plătești ca să duci mai mulți oameni într-un mesaj care nu convinge. Se rezolvă înainte, nu în paralel. Vestea bună e că partea asta se simte în zile, nu în luni, pentru că se taie lucruri de pe listă.'}
+];
+document.getElementById('f').addEventListener('submit',function(e){
+  e.preventDefault();
+  var f=e.target,v=f.email.value.trim();
+  if(!v||v.indexOf('@')<1)return;
+  var s=answers.reduce(function(a,b){return a+(b||0)},0);
+  var k=s<=1?0:(s===2?1:2);
+  var verdictKey=['executie','gri','claritate'][k];
+  ev('aeo_magnet_submit',{cta_location:'quiz_end',magnet:'test-executie-sau-pozitionare',scor_claritate:s,verdict:verdictKey});
+  fetch('/api/subscribe',{method:'POST',headers:{'content-type':'application/json'},
+    body:JSON.stringify({form:'test',email:v,scor:s,verdict:verdictKey,website:f.website?f.website.value:''})}).catch(function(){});
+  document.getElementById('scoreline').textContent=s+' din 5 semne arată spre claritate';
+  document.getElementById('vtitle').textContent=V[k].t;
+  document.getElementById('vbody').textContent=V[k].b;
+  STEPS.forEach(function(id){document.getElementById(id).classList.remove('on')});
+  document.getElementById('result').classList.add('on');
+  pbar.hidden=true;
+  document.getElementById('test').scrollIntoView({block:'start'});
+});
+document.getElementById('vcta').addEventListener('click',function(){ev('aeo_cta_click',{method:'page',cta_location:'verdict_to_conversatie'})});
+var rung=document.getElementById('rung');
+if(rung)rung.addEventListener('click',function(){ev('aeo_cta_click',{method:'page',cta_location:'faq_to_conversatie'})});
+var waf=document.getElementById('wa-footer');
+if(waf)waf.addEventListener('click',function(){ev('aeo_cta_click',{method:'whatsapp',cta_location:'footer'})});
+</script>
+
+<!-- ro-gate: pack=v6 lint=clean editor=0/26 date=2026-08-07 -->
+</body>
+</html>

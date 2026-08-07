@@ -1,0 +1,22 @@
+{
+  // Numele TREBUIE sa fie identic cu al Workerului existent, altfel Cloudflare
+  // creeaza unul nou in loc sa-l actualizeze pe asta.
+  "name": "razvanpopescu-site",
+  "compatibility_date": "2026-08-07",
+
+  // Codul care ruleaza pe server. Fara linia asta, proiectul e "doar fisiere
+  // statice" si Cloudflare refuza sa accepte variabile de mediu.
+  "main": "worker.js",
+
+  // Fisierele site-ului. Stau in radacina, exact unde sunt acum.
+  // Ce nu trebuie servit public e listat in .assetsignore.
+  "assets": {
+    "directory": ".",
+    "binding": "ASSETS",
+    "not_found_handling": "404-page"
+  },
+
+  "observability": {
+    "enabled": true
+  }
+}
