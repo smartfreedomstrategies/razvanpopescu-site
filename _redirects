@@ -1,0 +1,7 @@
+# Cloudflare Pages redirects
+# /about is the only URL Google ranks for "razvan popescu" (position 46, measured
+# 2026-08-07 via DataForSEO). It has returned HTTP 404 since the site was rebuilt,
+# so the one ranking asset the domain has was being discarded. 301 preserves it.
+/about      /    301
+/about/     /    301
+/despre     /    301
