@@ -964,49 +964,6 @@
       .proof-tags { gap: 8px; }
       .proof-tag { font-size: 12px; padding: 6px 10px; }
     }
-    /* ── Consimțământ cookie-uri ── */
-    .consent {
-      position: fixed;
-      left: 16px; right: 16px; bottom: 16px;
-      z-index: 100;
-      display: none;
-      gap: 16px;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 16px 20px;
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-md);
-      box-shadow: 0 8px 32px rgba(0,0,0,0.12);
-    }
-    .consent.show { display: flex; }
-    .consent p {
-      margin: 0;
-      flex: 1 1 260px;
-      font-size: 14px;
-      line-height: 1.45;
-      color: var(--ink-soft);
-    }
-    .consent-actions { display: flex; gap: 8px; flex: 0 0 auto; }
-    .consent button {
-      font-family: var(--font-sans);
-      font-size: 14px;
-      font-weight: 600;
-      padding: 9px 18px;
-      border: 1px solid var(--border);
-      border-radius: var(--radius-pill);
-      background: var(--white);
-      color: var(--ink);
-      cursor: pointer;
-    }
-    .consent button.accept {
-      background: var(--ink);
-      border-color: var(--ink);
-      color: var(--white);
-    }
   </style>
 
   <!-- Google Analytics 4 -->
@@ -1014,18 +971,6 @@
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){ dataLayer.push(arguments); }
-    // Denied until the visitor accepts; GA receives cookieless pings meanwhile.
-    gtag('consent', 'default', {
-      ad_storage: 'denied',
-      ad_user_data: 'denied',
-      ad_personalization: 'denied',
-      analytics_storage: 'denied'
-    });
-    try {
-      if (localStorage.getItem('consent-analytics') === 'granted') {
-        gtag('consent', 'update', { analytics_storage: 'granted' });
-      }
-    } catch (e) {}
     gtag('js', new Date());
     gtag('config', 'G-DJESLQ71FM');
   </script>
@@ -1398,14 +1343,6 @@
     </div>
   </footer>
 
-  <div class="consent" id="consent" role="region" aria-label="Consimțământ cookie-uri">
-    <p>Folosesc cookie-uri doar ca să văd câți oameni ajung pe site. Nimic pentru reclame.</p>
-    <div class="consent-actions">
-      <button type="button" data-consent="denied">Refuz</button>
-      <button type="button" class="accept" data-consent="granted">Accept</button>
-    </div>
-  </div>
-
   <!-- ── SCRIPTS ── -->
   <script>
     // Reveal on scroll
@@ -1443,20 +1380,6 @@
       });
     }, { threshold: 0.5 });
     counters.forEach(el => countObserver.observe(el));
-
-    // Cookie consent
-    const consent = document.getElementById('consent');
-    let choice = null;
-    try { choice = localStorage.getItem('consent-analytics'); } catch (e) {}
-    if (!choice) consent.classList.add('show');
-    consent.querySelectorAll('[data-consent]').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const value = btn.dataset.consent;
-        try { localStorage.setItem('consent-analytics', value); } catch (e) {}
-        gtag('consent', 'update', { analytics_storage: value });
-        consent.classList.remove('show');
-      });
-    });
 
     // Contact CTA tracking
     document.querySelectorAll('[data-cta]').forEach(el => {
