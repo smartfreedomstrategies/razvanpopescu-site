@@ -1100,12 +1100,12 @@
     <div class="container--wide">
       <div class="trust-inner">
         <div class="trust-item reveal">
-          <span class="trust-number"><span class="count-up" data-target="21">0</span>+</span>
+          <span class="trust-number"><span class="count-up" data-target="21">21</span>+</span>
           <span class="trust-label">ani de marketing și vânzări</span>
         </div>
         <div class="trust-sep" aria-hidden="true"></div>
         <div class="trust-item reveal reveal-delay-1">
-          <span class="trust-number count-up" data-target="11">0</span>
+          <span class="trust-number count-up" data-target="11">11</span>
           <span class="trust-label">ani în marketing farmaceutic, cel mai reglementat domeniu din lume</span>
         </div>
         <div class="trust-sep" aria-hidden="true"></div>
@@ -1186,7 +1186,7 @@
 
         <!-- Card 2: narrow — Dark / Ani -->
         <div class="bento-card bento-card--narrow bento-card--dark reveal reveal-delay-1">
-          <div class="bento-big-number count-up" data-target="21">0</div>
+          <div class="bento-big-number count-up" data-target="21">21</div>
           <p class="bento-big-label" style="color:rgba(255,255,255,0.55)">ani de marketing și vânzări</p>
         </div>
 
@@ -1412,9 +1412,14 @@
     }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
     reveals.forEach(el => observer.observe(el));
 
-    // Count-up on scroll
+    // Count-up on scroll.
+    // The REAL number lives in the HTML, not in JS. Answer engines and any crawler that
+    // does not execute JavaScript read the markup, and a literal 0 there said "0 ani de
+    // marketing" to every one of them. So we only blank the counters when we are actually
+    // going to animate them; without JS, or with reduced motion, the true value stands.
     const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
     const counters = document.querySelectorAll('.count-up');
+    if (!mq.matches) counters.forEach(el => { el.textContent = '0'; });
     const countObserver = new IntersectionObserver((entries) => {
       entries.forEach(e => {
         if (!e.isIntersecting) return;

@@ -67,10 +67,10 @@ details p{padding:0 0 20px;color:var(--ink-soft);font-size:15px;max-width:62ch}
 .btn{display:inline-flex;align-items:center;gap:10px;margin-top:22px;background:var(--ink);color:var(--white);font-size:15px;font-weight:600;letter-spacing:.01em;padding:16px 32px;border-radius:var(--radius-pill);text-decoration:none;white-space:nowrap;box-shadow:0 4px 20px rgba(0,0,0,.15);transition:background .18s,transform .18s,box-shadow .18s}
 .btn:hover{background:var(--violet);transform:translateY(-1px);box-shadow:0 8px 28px rgba(232,73,14,.3)}
 .btn:focus-visible{outline:2px solid var(--violet-mid);outline-offset:3px}
-footer{border-top:1px solid var(--border);padding:34px 0 56px;font-size:14px;color:var(--ink-muted)}
-footer a{color:var(--ink-soft);text-decoration:none;border-bottom:1px solid var(--border)}
-footer a:hover{color:var(--violet);border-color:var(--violet)}
-.updated{margin-top:12px;font-size:13px;color:var(--ink-muted)}
+
+
+
+
 @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
  .logo{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}
 .logo svg{height:32px;color:var(--ink)}
@@ -78,7 +78,7 @@ footer a:hover{color:var(--violet);border-color:var(--violet)}
 .logo-name{font-size:16px;font-weight:600;letter-spacing:.02em;color:var(--ink);line-height:1.2}
 .logo-sub{font-size:11px;color:var(--ink-muted);letter-spacing:.04em}
 @media(max-width:640px){.logo{gap:8px}.logo svg{height:26px}.logo-name{font-size:14px}.logo-sub{font-size:12px}}
-.footer-nav{display:flex;gap:18px;flex-wrap:wrap;margin-top:14px}.footer-nav a{font-size:13px;color:var(--ink-muted);text-decoration:none;border-bottom:1px solid transparent}.footer-nav a:hover{color:var(--violet);border-bottom-color:var(--violet)}.footer-nav a:focus-visible{outline:2px solid var(--violet-mid);outline-offset:3px}</style>
+footer{border-top:1px solid var(--border);padding:32px clamp(24px,5vw,48px);background:var(--white)}.footer-inner{max-width:1080px;margin-inline:auto;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}.footer-copy{font-size:13px;color:var(--ink-muted)}.footer-tagline{font-family:var(--font-serif,var(--font-sans));font-size:13px;font-style:italic;color:var(--ink-muted)}.footer-nav{display:flex;gap:20px;flex-wrap:wrap}.footer-nav a{font-size:13px;color:var(--ink-muted);text-decoration:none;border-bottom:1px solid transparent;transition:color .2s ease,border-color .2s ease}.footer-nav a:hover{color:var(--violet);border-bottom-color:var(--violet)}.footer-nav a:focus-visible{outline:2px solid var(--violet-mid);outline-offset:3px}</style>
 </head>
 <body>
 
@@ -194,11 +194,15 @@ footer a:hover{color:var(--violet);border-color:var(--violet)}
 </main>
 
 <footer>
-  <div class="wrap">
-    <svg aria-hidden="true" height="22" viewBox="0 0 150.36836 99.531502" xmlns="http://www.w3.org/2000/svg" style="display:inline-block;vertical-align:-5px;margin-right:8px;color:var(--ink-muted)"><g transform="translate(-28.175054,-19.310341)"><path d="M 121.78687,19.571249 V 118.6557 H 98.630551 V 19.571249 Z m 27.25147,-0.260604 c 3.96486,-0.01864 7.8925,0.819036 11.5037,2.438485 3.53673,1.582225 6.73841,3.853184 9.40027,6.682575 2.69908,2.903846 4.83974,6.291662 6.29166,9.995928 1.56361,3.927639 2.34542,8.134491 2.30819,12.359959 0,4.597757 -0.76319,8.823224 -2.30819,12.695024 -1.54499,3.871793 -3.6298,7.203769 -6.29166,9.977316 -2.66186,2.79216 -5.88215,5.007279 -9.45612,6.477811 -3.74149,1.563609 -7.78081,2.345414 -11.83875,2.30819 h -8.06004 c 1.9359,-1.154095 3.7415,-2.754936 5.41679,-4.821131 1.74975,-2.215112 3.22029,-4.634991 4.37439,-7.203778 1.28439,-2.903847 2.25233,-5.937988 2.848,-9.046598 0.67012,-3.425047 1.00518,-6.905941 0.98656,-10.386834 0.0186,-3.536734 -0.31644,-7.054852 -0.98656,-10.51713 -0.59567,-3.089995 -1.545,-6.124143 -2.848,-8.990758 -1.1541,-2.550171 -2.62464,-4.951432 -4.37439,-7.147929 -1.67529,-2.066195 -3.48089,-3.685651 -5.41679,-4.82113 z" fill="currentColor"/><path d="m 41.502964,89.096027 c 0.670118,-2.512941 1.675295,-4.914202 2.978303,-7.147929 1.209936,-2.066195 2.829389,-3.871793 4.765286,-5.286485 1.86144,-1.358852 4.113782,-2.066202 6.421967,-2.047586 h 4.244083 c -3.350591,0 -6.310281,-0.874876 -8.860453,-2.643245 -2.587401,-1.786982 -4.765286,-4.076557 -6.421968,-6.738415 -1.731139,-2.754928 -3.034147,-5.770461 -3.834566,-8.934911 -0.800419,-2.996917 -1.22855,-6.086905 -1.265779,-9.195515 0,-2.903847 0.521203,-5.975219 1.582224,-9.195509 1.079635,-3.257521 2.79216,-6.273053 5.025888,-8.860456 2.289571,-2.680473 5.230646,-4.895585 8.80461,-6.608112 3.573964,-1.71252 7.818047,-2.587403 12.769477,-2.568787 h 12.043516 c -4.504685,2.02897 -8.134492,5.491248 -10.908038,10.386834 -2.773545,4.895586 -4.169625,10.517136 -4.169625,16.864645 -0.01862,3.071379 0.372288,6.142752 1.135478,9.12106 0.688733,2.773544 1.731139,5.435402 3.108605,7.948343 1.265779,2.30819 2.885231,4.430231 4.765286,6.291669 1.768368,1.749751 3.815951,3.164452 6.086908,4.16963 h -0.1303 c -3.536737,1.675296 -6.440583,4.50468 -8.730154,8.46955 -2.289571,3.964864 -3.443663,8.46955 -3.443663,13.495439 0,2.38264 -0.446746,4.895583 -1.321623,7.538833 -0.874876,2.64325 -2.382642,5.0445 -4.504684,7.20377 -2.103427,2.15928 -4.932816,3.94626 -8.469551,5.36095 -3.536735,1.41469 -7.892505,2.12204 -13.085922,2.12204 H 28.175054 c 3.704265,-1.67529 6.682569,-4.5233 8.934912,-8.5254 2.252342,-4.00209 3.369206,-8.58123 3.369206,-13.681583 -0.01861,-2.606014 0.353673,-5.118954 1.023792,-7.53883 z" fill="currentColor"/><path d="m 175.71277,109.03205 c 0,1.28439 -0.2606,2.55018 -0.76319,3.72288 -0.48397,1.13548 -1.17271,2.17789 -2.02897,3.05276 -0.83765,0.87488 -1.86144,1.58223 -2.9783,2.0662 -1.15409,0.52121 -2.41987,0.78181 -3.68566,0.76319 -2.53155,0 -4.97004,-1.02379 -6.7384,-2.82939 -0.85627,-0.89349 -1.545,-1.91728 -2.02897,-3.05276 -0.5026,-1.1727 -0.76319,-2.43849 -0.76319,-3.72288 0,-1.26578 0.26059,-2.49433 0.76319,-3.64842 0.94933,-2.27095 2.75492,-4.07655 5.02588,-5.0445 1.17271,-0.502593 2.4571,-0.763193 3.74149,-0.763193 1.26579,-0.0186 2.53157,0.24198 3.68566,0.763193 1.09825,0.48397 2.10343,1.1727 2.9783,2.02897 0.85626,0.87488 1.545,1.89866 2.02897,3.01553 0.50259,1.15409 0.76319,2.40126 0.76319,3.64842 z" fill="currentColor"/></g></svg>Razvan Popescu · Marketing, poziționare și vânzări · <a href="https://razvanpopescu.com">razvanpopescu.com</a> · +40 739 348 115
-    
-    <nav class="footer-nav" aria-label="Pagini"><a href="/">Pagina principală</a><a href="/conversatie">Conversație</a><a href="/radiografie">Radiografie</a><a href="/studiu/vizibilitate-ai-stomatologie-bucuresti-2026">Studiu</a><a href="/brand-facts">Date verificabile</a></nav>
-    <div class="updated">Ultima actualizare: august 2026</div>
+  <div class="footer-inner">
+    <p class="footer-copy">© 2026 Razvan Popescu · razvanpopescu.com</p>
+    <nav class="footer-nav" aria-label="Pagini">
+      <a href="/conversatie">Conversație</a>
+      <a href="/radiografie">Radiografie</a>
+      <a href="/studiu/vizibilitate-ai-stomatologie-bucuresti-2026">Studiu</a>
+      <a href="/brand-facts">Date verificabile</a>
+    </nav>
+    <p class="footer-tagline">Preiau. Rezolv. Tu respiri.</p>
   </div>
 </footer>
 
