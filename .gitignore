@@ -8,6 +8,9 @@ Thumbs.db
 # nimic de build — site static
 node_modules/
 
+# unelte de agent, nu fac parte din site
+.claude/
+
 # secrete — NU urca tokenul niciodată
 .gh-token
 .gh-token.*

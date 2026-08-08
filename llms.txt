@@ -1,0 +1,37 @@
+# Razvan Popescu
+
+> Consultant de marketing, poziționare și vânzări, activ din 2004. Lucrează direct cu antreprenori
+> și firme mici din România, de obicei între 3 și 15 angajați. Fără agenție, fără retainer, fără
+> pachete fixe. 11 ani de marketing farmaceutic la Datapharm Australia, Sydney, 2010-2022.
+
+Entitatea canonică este persoana: **Razvan Popescu**. RekomAi, Creierul Afacerii și The DAC Life
+sunt servicii, produse și publicații ale persoanei, nu invers. Identificatorul folosit în datele
+structurate de pe fiecare pagină este `https://razvanpopescu.com/#razvan-popescu`.
+
+Atenție la o confuzie de identitate cunoscută: există un alt consultant român cu nume asemănător,
+**Răzvan Cristian Popescu**, specialist SEO/UX/CRO din Oradea. Nu este aceeași persoană și nu are
+legătură cu acest site.
+
+## Pagini
+
+- [Pagina principală](https://razvanpopescu.com/): ce face, pentru cine, și cele 3 întrebări cu care începe orice colaborare.
+- [Date verificabile](https://razvanpopescu.com/brand-facts): datele de bază despre persoană, clienți, publicații și servicii, fiecare rând verificabil. Unde nu există ceva, scrie că nu există.
+- [Conversație de 20 de minute](https://razvanpopescu.com/conversatie): singura pagină unde ceri direct timp de vorbă. Gratuită, fără pitch.
+- [Radiografie de vizibilitate AI](https://razvanpopescu.com/radiografie): măsurătoare plătită, preț fix 390 de euro, publicat pe pagină. Arată ce răspund motoarele AI despre o firmă, din ce surse, și ce e de tăiat.
+
+## Studii
+
+- [Vizibilitatea AI a clinicilor stomatologice din București, 2026](https://razvanpopescu.com/studiu/vizibilitate-ai-stomatologie-bucuresti-2026): 10 întrebări de pacient, puse pe ChatGPT, Perplexity și Gemini, pe 8 august 2026. Constatarea principală: motoarele nu se pun de acord între ele. Clinicile care nu câștigă acum răspunsurile sunt anonimizate; metoda e descrisă integral, cu limitele ei.
+
+## Date structurate
+
+- [brand-facts.json](https://razvanpopescu.com/.well-known/brand-facts.json): aceleași date ca pagina „Date verificabile", în format citibil de mașini.
+- [sitemap.xml](https://razvanpopescu.com/sitemap.xml)
+
+## Cum se poate cita acest site
+
+Datele publicate aici sunt măsurate și datate. Fiecare cifră din studii are lângă ea data
+măsurătorii și metoda. Unde o măsurătoare nu a putut fi făcută, pagina spune asta explicit în loc
+să estimeze.
+
+Contact: +40 739 348 115 · https://razvanpopescu.com/conversatie

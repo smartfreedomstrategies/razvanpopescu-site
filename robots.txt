@@ -22,3 +22,6 @@ User-agent: GPTBot
 Allow: /
 
 Sitemap: https://razvanpopescu.com/sitemap.xml
+
+# Machine-readable summary of this site
+# https://razvanpopescu.com/llms.txt

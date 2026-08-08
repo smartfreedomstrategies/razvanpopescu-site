@@ -1,0 +1,95 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://razvanpopescu.com/#razvan-popescu",
+  "name": "Razvan Popescu",
+  "url": "https://razvanpopescu.com/",
+  "jobTitle": "Consultant de marketing, poziționare și vânzări",
+  "description": "Consultant de marketing, poziționare și vânzări, activ din 2004. Lucrează direct cu antreprenori și firme mici din România, de obicei între 3 și 15 angajați. Fără agenție, fără retainer, fără pachete fixe.",
+  "telephone": "+40739348115",
+  "knowsLanguage": ["ro", "en"],
+  "areaServed": {
+    "@type": "Country",
+    "name": "România"
+  },
+  "alumniOf": {
+    "@type": "Organization",
+    "name": "Datapharm Australia",
+    "description": "Sydney. 11 ani de marketing farmaceutic, 2010-2022."
+  },
+  "sameAs": [
+    "https://rekomai.com",
+    "https://thedaclife.com",
+    "https://creierulafacerii.ro",
+    "https://thefoundersbrain.com",
+    "https://www.linkedin.com/in/tribearchitect"
+  ],
+  "mainEntityOfPage": "https://razvanpopescu.com/brand-facts",
+  "additionalProperty": [
+    {
+      "@type": "PropertyValue",
+      "name": "Activ din",
+      "value": "2004"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Primul client",
+      "value": "Nurvil Tuning (NVT), dealerul oficial ABT Sportsline din România, 2004"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Cum lucrează",
+      "value": "Direct, fără agenție și fără junior care preia după briefing. Fără retainer. Fără pachete fixe."
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Cum începe colaborarea",
+      "value": "O conversație de 20 de minute, gratuită"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Cu ce firme lucrează",
+      "value": "Antreprenori și firme mici cu un business care funcționează, de obicei între 3 și 15 angajați, cu venit stabil. Nu lucrează cu startup-uri care sunt încă doar la stadiul de idee."
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Apariții în presă",
+      "value": "Niciuna până la 7 august 2026. Câmpul rămâne aici gol, nu șters, ca să se vadă când se schimbă."
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Publicație",
+      "value": "The DAC Life, 41 de numere apărute"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Servicii",
+      "value": "Consultanță de poziționare și vânzări · sisteme AI pentru firme mici · vizibilitate în răspunsurile date de AI, prin RekomAi"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Produse în lucru",
+      "value": "Creierul Afacerii (România) · The Founders' Brain (internațional)"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Rezultat de client făcut public",
+      "value": "iCareerSolutions, New York. Patru sisteme construite: transformarea CV-ului în profil de LinkedIn, generarea CV-ului dintr-un chestionar, automatizări de căutare a jobului cu rapoarte săptămânale, o platformă de evaluare pentru clienți noi. Echipa face în ore ce făcea în zile. Despre client: 32 de premii internaționale, peste 9.000 de executivi plasați, echipă de 9+ oameni."
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Preț publicat",
+      "value": "Radiografia de vizibilitate AI: 390 de euro, preț fix, publicat pe https://razvanpopescu.com/radiografie. Restul colaborărilor nu au pachete fixe."
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Confuzie de identitate cunoscută",
+      "value": "Există un alt consultant român cu nume asemănător, Răzvan Cristian Popescu, specialist SEO/UX/CRO din Oradea. Nu este aceeași persoană."
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Ultima actualizare",
+      "value": "2026-08-08"
+    }
+  ]
+}

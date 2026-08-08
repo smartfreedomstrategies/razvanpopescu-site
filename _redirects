@@ -5,3 +5,8 @@
 /about      /    301
 /about/     /    301
 /despre     /    301
+
+# The quiz was retired 2026-08-08 (operator: no longer relevant). 301 rather than 404:
+# it was live and linked, and a 404 discards whatever signal the URL had accumulated.
+/test-executie-sau-pozitionare   /conversatie   301
+/test-executie-sau-pozitionare/  /conversatie   301
