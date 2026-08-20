@@ -10,3 +10,8 @@
 # it was live and linked, and a 404 discards whatever signal the URL had accumulated.
 /test-executie-sau-pozitionare   /conversatie   301
 /test-executie-sau-pozitionare/  /conversatie   301
+
+# Studiul s-a mutat pe rekomai.ro (2026-08-20). razvanpopescu.com ramane doar brand personal;
+# 301 transfera autoritatea acumulata din 8 aug. NU deploya inainte ca pagina rekomai sa fie live.
+/studiu/vizibilitate-ai-stomatologie-bucuresti-2026    https://rekomai.ro/studiu/vizibilitate-ai-stomatologie-bucuresti-2026    301
+/studiu/vizibilitate-ai-stomatologie-bucuresti-2026/   https://rekomai.ro/studiu/vizibilitate-ai-stomatologie-bucuresti-2026    301
