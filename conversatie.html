@@ -17,6 +17,7 @@
 <meta name="twitter:image" content="https://razvanpopescu.com/og/conversatie.png" />
 <meta property="og:title" content="O conversație de 20 de minute cu Razvan Popescu" />
 <meta property="og:description" content="Trei întrebări despre ce e blocat în firma ta. Fără pitch. Dacă nu poate ajuta, îți spune în primele 10 minute." />
+<link rel="preconnect" href="https://app.cal.com" crossorigin />
 <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
 <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin />
 <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,600,700&display=swap" rel="stylesheet" />
@@ -60,16 +61,13 @@ section{padding:64px 0;border-top:1px solid var(--border)}
 .after{margin-top:30px;font-size:17px;font-weight:500;color:var(--ink)}
 .bio p{font-size:16px;color:var(--ink-soft);max-width:62ch;margin-top:16px}
 .bio p:first-of-type{margin-top:22px}
-.formcard{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);padding:40px 36px;max-width:640px;margin-top:32px;box-shadow:0 1px 2px rgba(0,0,0,.03)}
-@media(max-width:640px){.formcard{padding:28px 22px}}
-label{display:block;font-size:14px;font-weight:500;margin:20px 0 8px}
-label:first-of-type{margin-top:0}
-input,textarea{width:100%;font-family:inherit;font-size:16px;color:var(--ink);background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);padding:14px 16px;transition:border-color .18s,background .18s}
-input:focus,textarea:focus{background:var(--white);border-color:var(--violet)}
-textarea{min-height:96px;resize:vertical}
-.formcard .btn{margin-top:26px;width:100%;justify-content:center;min-height:52px}
+.calcard{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);padding:10px;margin-top:32px;box-shadow:0 1px 2px rgba(0,0,0,.03);overflow:hidden}
+/* min-height reserves the calendar's space before Cal loads, so nothing below it
+   jumps. Measured: ~570px at 1080 wide, ~830px stacked on mobile. */
+#my-cal-inline-20min-ro{width:100%;min-height:620px;overflow:hidden;border-radius:12px}
+@media(max-width:900px){#my-cal-inline-20min-ro{min-height:900px}}
+@media(max-width:640px){.calcard{padding:6px;border-radius:var(--radius-md)}}
 .formnote{margin-top:16px;font-size:14px;color:var(--ink-muted)}
-.ok{display:none;margin-top:20px;padding:16px 18px;background:var(--surface-2);border-radius:var(--radius-md);font-size:15px;color:var(--ink)}
 details{border-bottom:1px solid var(--border)}
 summary{cursor:pointer;list-style:none;padding:20px 0;font-size:16px;font-weight:500;display:flex;justify-content:space-between;gap:16px;align-items:center}
 summary::-webkit-details-marker{display:none}
@@ -171,23 +169,14 @@ footer{border-top:1px solid var(--border);padding:32px clamp(24px,5vw,48px);back
 </section>
 
 <section id="formular">
-  <div class="narrow">
-    <p class="eyebrow">Trei câmpuri, atât</p>
-    <h2>Spune-mi ce se întâmplă</h2>
-    <div class="formcard">
-      <form id="f">
-        <label for="nume">Numele tău</label>
-        <input id="nume" name="nume" type="text" autocomplete="name" required />
-        <label for="email">Email</label>
-        <input id="email" name="email" type="email" autocomplete="email" inputmode="email" spellcheck="false" required />
-        <label for="blocat">Ce e blocat, într-o propoziție</label>
-        <textarea id="blocat" name="blocat" required></textarea>
-        <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" />
-        <button class="btn" type="submit">Trimite</button>
-      </form>
-      <p class="ok" id="ok">Am primit. Îți răspund personal, de obicei în aceeași zi.</p>
-      <p class="ok" id="err" style="background:#fff3ee">N-a mers trimiterea. Scrie-mi direct pe WhatsApp la +40 739 348 115 și rezolvăm în două minute.</p>
-      <p class="formnote">Îți răspund personal, de obicei în aceeași zi. Nu ajungi pe nicio listă de emailuri.</p>
+  <div class="wrap">
+    <p class="eyebrow">Alege ora</p>
+    <h2>Rezervă cele 20 de minute</h2>
+    <p class="sub">Vezi orele libere și alege una. Îți confirm personal și primești linkul de Google Meet pe email.</p>
+    <div class="calcard">
+      <!-- Cal inline embed code begins -->
+      <div id="my-cal-inline-20min-ro"></div>
+      <!-- Cal inline embed code ends -->
     </div>
     <p class="formnote" style="margin-top:22px">Dacă preferi WhatsApp, <a class="ghost" id="wa-form" href="https://wa.me/40739348115?text=Bun%C4%83%20Razvan%2C%20vreau%20s%C4%83%20vorbim.">scrie-mi direct</a>.</p>
   </div>
@@ -262,34 +251,33 @@ function ev(name,params){var p=params||{};if(aiRef)p.ai_referral=aiRef;gtag('eve
   if(el)el.addEventListener('click',function(){ev('aeo_cta_click',{method:'whatsapp',cta_location:id})})});
 var rung=document.getElementById('rung');
 if(rung)rung.addEventListener('click',function(){ev('aeo_rung_click',{cta_location:'conversatie_faq'})});
-var HOOK='https://n8n-25bz.srv1553150.hstgr.cloud/webhook/10a52ce6-a392-4ec3-8488-5e9f334dafe4';
-var f=document.getElementById('f');
-if(f)f.addEventListener('submit',function(e){
-  e.preventDefault();
-  var nume=f.nume.value.trim(),email=f.email.value.trim(),blocat=f.blocat.value.trim();
-  if(!nume||!email||!blocat)return;
-  if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)){f.email.focus();return}
-  var btn=f.querySelector('button[type=submit]');
-  var ok=function(){f.style.display='none';document.getElementById('ok').style.display='block'};
-  var bad=function(){document.getElementById('err').style.display='block';
-    if(btn){btn.disabled=false;btn.textContent='Trimite'}};
-  /* Honeypot: a bot filled the hidden field. Show success, send nothing. */
-  if(f.website&&f.website.value){ok();return}
-  ev('aeo_magnet_submit',{cta_location:'conversatie_form',form:'conversatie'});
-  if(btn){btn.disabled=true;btn.textContent='Se trimite...'}
-  var payload=JSON.stringify({form:'conversatie',nume:nume,email:email,blocat:blocat,
-    sursa:'conversatie',pagina:location.href,referrer:document.referrer||'',
-    ai_referral:aiRef||'',trimis_la:new Date().toISOString()});
-  fetch(HOOK,{method:'POST',headers:{'content-type':'application/json'},body:payload})
-    .then(function(r){if(!r.ok)throw 0;ok()})
-    .catch(function(){
-      /* CORS not enabled on the webhook, or the response was unreadable. Resend as a
-         simple request so the lead still lands, then treat it as delivered. */
-      fetch(HOOK,{method:'POST',mode:'no-cors',
-        headers:{'content-type':'text/plain;charset=UTF-8'},body:payload})
-        .then(ok).catch(bad);
-    });
-});
+/* Cal.com inline embed. The loader below is tiny and only queues calls; the real
+   embed.js is fetched on the first Cal(...) call, which we defer until the booking
+   section is close to the viewport so it never blocks the mobile render. */
+(function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+
+var calStarted=false;
+function startCal(){
+  if(calStarted)return;calStarted=true;
+  Cal("init", "20min-ro", {origin:"https://app.cal.com"});
+  Cal.config = Cal.config || {};
+  Cal.config.forwardQueryParams = true;
+  Cal.ns["20min-ro"]("inline", {
+    elementOrSelector:"#my-cal-inline-20min-ro",
+    config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true","theme":"light"},
+    calLink: "razvan-popescu/20min-ro",
+  });
+  Cal.ns["20min-ro"]("ui", {"theme":"light","cssVarsPerTheme":{"light":{"cal-brand":"#E8490E"}},"hideEventTypeDetails":false,"layout":"month_view"});
+  Cal.ns["20min-ro"]("on", {action:"bookingSuccessful", callback:function(){
+    ev('aeo_magnet_submit',{cta_location:'conversatie_cal',form:'cal_20min'})}});
+}
+var calMount=document.getElementById('my-cal-inline-20min-ro');
+if(calMount&&'IntersectionObserver'in window){
+  var calObs=new IntersectionObserver(function(entries){
+    if(entries[0].isIntersecting){calObs.disconnect();startCal()}
+  },{rootMargin:'600px'});
+  calObs.observe(calMount);
+}else{startCal()}
 </script>
 
 <!-- ro-gate: pack=v6 lint=clean editor=15/56 date=2026-08-08 -->
