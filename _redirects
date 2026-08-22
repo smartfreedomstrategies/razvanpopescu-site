@@ -15,3 +15,9 @@
 # 301 transfera autoritatea acumulata din 8 aug. NU deploya inainte ca pagina rekomai sa fie live.
 /studiu/vizibilitate-ai-stomatologie-bucuresti-2026    https://rekomai.ro/studiu/vizibilitate-ai-stomatologie-bucuresti-2026    301
 /studiu/vizibilitate-ai-stomatologie-bucuresti-2026/   https://rekomai.ro/studiu/vizibilitate-ai-stomatologie-bucuresti-2026    301
+
+# /radiografie s-a mutat pe rekomai.ro (2026-08-22, _GOAL-RO-FRONT.md Phase 2): rekomai.ro
+# e frontul RO al ladder-ului, razvanpopescu.com ramane doar brand personal. Ultimul asset
+# AEO comercial paraseste domeniul personal. NU deploya inainte ca pagina rekomai sa fie live.
+/radiografie    https://rekomai.ro/radiografie    301
+/radiografie/   https://rekomai.ro/radiografie    301
