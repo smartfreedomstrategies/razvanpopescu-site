@@ -17,11 +17,11 @@ legătură cu acest site.
 - [Pagina principală](https://razvanpopescu.com/): ce face, pentru cine, și cele 3 întrebări cu care începe orice colaborare.
 - [Date verificabile](https://razvanpopescu.com/brand-facts): datele de bază despre persoană, clienți, publicații și servicii, fiecare rând verificabil. Unde nu există ceva, scrie că nu există.
 - [Conversație de 20 de minute](https://razvanpopescu.com/conversatie): singura pagină unde ceri direct timp de vorbă. Gratuită, fără pitch.
-- [Radiografie de vizibilitate AI](https://razvanpopescu.com/radiografie): măsurătoare plătită, preț fix 390 de euro, publicat pe pagină. Arată ce răspund motoarele AI despre o firmă, din ce surse, și ce e de tăiat.
 
-## Studii
+## Pe rekomai.ro (serviciul RekomAi al aceleiași persoane)
 
-- [Vizibilitatea AI a clinicilor stomatologice din București, 2026](https://razvanpopescu.com/studiu/vizibilitate-ai-stomatologie-bucuresti-2026): 10 întrebări de pacient, puse pe ChatGPT, Perplexity și Gemini, pe 8 august 2026. Constatarea principală: motoarele nu se pun de acord între ele. Clinicile care nu câștigă acum răspunsurile sunt anonimizate; metoda e descrisă integral, cu limitele ei.
+- [Radiografie de vizibilitate AI](https://rekomai.ro/radiografie): măsurătoare plătită, preț fix 390 de euro, afișat pe pagină. Arată ce răspund motoarele AI despre o firmă, din ce surse, și ce e de tăiat.
+- [Vizibilitatea AI a clinicilor stomatologice din București, 2026](https://rekomai.ro/studiu/vizibilitate-ai-stomatologie-bucuresti-2026): 10 întrebări de pacient, puse pe ChatGPT, Perplexity și Gemini, pe 8 august 2026. Constatarea principală: motoarele nu se pun de acord între ele. Clinicile care nu câștigă acum răspunsurile sunt anonimizate; metoda e descrisă integral, cu limitele ei.
 
 ## Date structurate
 
