@@ -21,3 +21,12 @@
 # AEO comercial paraseste domeniul personal. NU deploya inainte ca pagina rekomai sa fie live.
 /radiografie    https://rekomai.ro/radiografie    301
 /radiografie/   https://rekomai.ro/radiografie    301
+
+# Doua adrese ramase indexate din versiunea veche a site-ului, ambele 404 la 2026-08-27.
+# Nu au echivalent viu pe .com, asa ca merg pe cea mai apropiata pagina de pe razvanpopescu.ro.
+# Punctuale, pe adrese moarte. NU este o redirectare a domeniului: .com ramane pe loc,
+# fiindca profilul lui de linkuri are scor de spam 45 si nu il mutam pe domeniul curat.
+/newsletter.html    https://razvanpopescu.ro/articole/       301
+/newsletter         https://razvanpopescu.ro/articole/       301
+/quiz               https://razvanpopescu.ro/test-gratuit/   301
+/quiz/              https://razvanpopescu.ro/test-gratuit/   301
