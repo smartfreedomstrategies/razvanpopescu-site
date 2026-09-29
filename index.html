@@ -151,13 +151,6 @@
       font-size: 12px; font-weight: 700; letter-spacing: 0.1em;
       text-transform: uppercase; color: var(--ink-muted); margin-bottom: 20px;
     }
-    .timeline { list-style: none; }
-    .timeline li {
-      display: grid; grid-template-columns: 96px 1fr; gap: 16px;
-      padding: 14px 0; border-top: 1px solid var(--border);
-    }
-    .timeline li:last-child { border-bottom: 1px solid var(--border); }
-    .year { font-weight: 700; color: var(--accent); }
 
     .links { list-style: none; display: grid; gap: 10px; }
     .links a {
@@ -176,7 +169,6 @@
 
     @media (max-width: 520px) {
       .hero { padding-top: 48px; }
-      .timeline li { grid-template-columns: 1fr; gap: 2px; }
       .links a { flex-direction: column; gap: 2px; }
       .links span { text-align: left; }
     }
@@ -216,15 +208,6 @@
         <a class="btn btn-primary" href="https://razvanpopescu.ro/" data-cta="notice-ro">Go to razvanpopescu.ro →</a>
       </div>
     </div>
-
-    <section>
-      <h3>Background</h3>
-      <ul class="timeline">
-        <li><span class="year">2004</span><span>First client in Romania: Nurvil Tuning, the official ABT Sportsline dealer.</span></li>
-        <li><span class="year">2010–2022</span><span>Sydney. 11 years in pharmaceutical marketing at Datapharm Australia, where a wrong message has real consequences.</span></li>
-        <li><span class="year">2022</span><span>Back in Romania, after 12 years abroad.</span></li>
-      </ul>
-    </section>
 
     <section>
       <h3>Elsewhere</h3>
