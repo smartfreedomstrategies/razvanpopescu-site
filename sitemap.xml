@@ -1,31 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   lastmod trebuie sa fie data reala a ultimei modificari a paginii, luata din git,
-  nu data la care a fost scris sitemap-ul. Pana la 2026-08-27 toate trei aratau
-  2026-08-07, desi paginile se schimbasera intre timp. Un lastmod care nu se misca
-  in timp ce pagina se schimba invata Google sa il ignore, si atunci modificarile
-  noi asteapta recrawl-ul lent in loc sa fie luate repede.
+  nu data la care a fost scris sitemap-ul. Un lastmod care nu se misca in timp ce
+  pagina se schimba invata Google sa il ignore.
 
   Cand modifici o pagina, muta-i si lastmod-ul aici, in aceeasi zi.
 
-  Sunt listate doar adrese canonice care intorc 200. /radiografie si
-  /studiu/vizibilitate-ai-stomatologie-bucuresti-2026 intorc 301 catre rekomai.ro
-  din 20 si 22.08.2026, deci nu apar aici, intentionat.
+  Din 2026-09-29 .com are o singura pagina, in engleza. /brand-facts si /conversatie
+  intorc 301 catre razvanpopescu.ro, iar /radiografie si /studiu/... catre rekomai.ro,
+  deci nu apar aici, intentionat. Aici stau doar adrese canonice care intorc 200.
 -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://razvanpopescu.com/</loc>
-    <lastmod>2026-08-27</lastmod>
+    <lastmod>2026-09-29</lastmod>
     <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://razvanpopescu.com/brand-facts</loc>
-    <lastmod>2026-08-22</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://razvanpopescu.com/conversatie</loc>
-    <lastmod>2026-08-22</lastmod>
-    <priority>0.9</priority>
   </url>
 </urlset>

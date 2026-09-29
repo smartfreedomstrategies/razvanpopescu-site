@@ -8,8 +8,8 @@
 
 # The quiz was retired 2026-08-08 (operator: no longer relevant). 301 rather than 404:
 # it was live and linked, and a 404 discards whatever signal the URL had accumulated.
-/test-executie-sau-pozitionare   /conversatie   301
-/test-executie-sau-pozitionare/  /conversatie   301
+/test-executie-sau-pozitionare   https://razvanpopescu.ro/test-gratuit/   301
+/test-executie-sau-pozitionare/  https://razvanpopescu.ro/test-gratuit/   301
 
 # Studiul s-a mutat pe rekomai.ro (2026-08-20). razvanpopescu.com ramane doar brand personal;
 # 301 transfera autoritatea acumulata din 8 aug. NU deploya inainte ca pagina rekomai sa fie live.
@@ -25,8 +25,20 @@
 # Doua adrese ramase indexate din versiunea veche a site-ului, ambele 404 la 2026-08-27.
 # Nu au echivalent viu pe .com, asa ca merg pe cea mai apropiata pagina de pe razvanpopescu.ro.
 # Punctuale, pe adrese moarte. NU este o redirectare a domeniului: .com ramane pe loc,
-# fiindca profilul lui de linkuri are scor de spam 45 si nu il mutam pe domeniul curat.
+# fiindca profilul lui de linkuri are scor de spam 49 (DataForSEO, masurat 2026-09-29;
+# 45 in brief-ul din 27.08) si nu il mutam pe domeniul curat.
 /newsletter.html    https://razvanpopescu.ro/articole/       301
 /newsletter         https://razvanpopescu.ro/articole/       301
 /quiz               https://razvanpopescu.ro/test-gratuit/   301
 /quiz/              https://razvanpopescu.ro/test-gratuit/   301
+
+# .com devine versiunea in engleza (2026-09-29). Pana atunci e o singura pagina in engleza,
+# iar paginile romanesti de aici au plecat pe echivalentele lor vii de pe razvanpopescu.ro.
+# Punctuale, pagina cu pagina. Tot NU este o redirectare a domeniului: / ramane pe .com.
+/brand-facts                  https://razvanpopescu.ro/date-brand/   301
+/brand-facts/                 https://razvanpopescu.ro/date-brand/   301
+/brand-facts.html             https://razvanpopescu.ro/date-brand/   301
+/conversatie                  https://razvanpopescu.ro/contact/      301
+/conversatie/                 https://razvanpopescu.ro/contact/      301
+/conversatie.html             https://razvanpopescu.ro/contact/      301
+/.well-known/brand-facts.json https://razvanpopescu.ro/.well-known/brand-facts.json   301
